@@ -1,0 +1,32 @@
+{
+  "name": "bella-muni-redux",
+  "version": "1.0.0",
+  "description": "A UI-independent state management system for a BellaMuni application. Uses redux.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redux",
+    "muni",
+    "bellamuni",
+    "nextbus",
+    "nextmuni",
+    "transit",
+    "sfmuni",
+    "sf-muni",
+    "sanfrancisco"
+  ],
+  "author": "Brian Duncan",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0"
+  }
+}
