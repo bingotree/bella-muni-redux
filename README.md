@@ -26,7 +26,7 @@ Any other changes should go ONLY in the client branch.
 PS how is this done? Cherry picking??
 
 ### Getting started
-fork `bella-muni-redux`. Name the fork the name of your client. Should be a valid directory name.
+Fork `bella-muni-redux`. Name the fork the name of your client. Should be a valid directory name.
 
 You should now have the relevant package.json files and a file structure like the following:
 ```
