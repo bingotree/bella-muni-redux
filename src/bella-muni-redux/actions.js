@@ -40,55 +40,55 @@ export const FETCH_FAVORITES = 'FETCH_FAVORITES';
 // Sync action creators
 export function setRouteFilter(filter) {
   return { type: SET_ROUTE_FILTER, filter };
-};
+}
 
 // Async action creators
 // routes
-export const requestRoutes = () => { return { type: FETCH_ROUTES }};
-export const receiveRoutesError = (error) => { return { type: FETCH_ROUTES, status: 'error', error: error }};
-export const receiveRoutes = routes => { return { type: FETCH_ROUTES, status: 'success', response: routes }};
+export const requestRoutes = () => ({ type: FETCH_ROUTES });
+export const receiveRoutesError = error => ({ type: FETCH_ROUTES, status: 'error', error });
+export const receiveRoutes = routes => ({ type: FETCH_ROUTES, status: 'success', response: routes });
 
 // routeDirections
-export const requestRouteDirections = () => { return { type: FETCH_ROUTE_DIRECTIONS }};
-export const receiveRouteDirectionsError = (error) => { return { type: FETCH_ROUTE_DIRECTIONS, status: 'error', error: error }};
-export const receiveRouteDirections = directions => { return { type: FETCH_ROUTE_DIRECTIONS, status: 'success', response: directions }};
+export const requestRouteDirections = () => ({ type: FETCH_ROUTE_DIRECTIONS });
+export const receiveRouteDirectionsError = error => ({ type: FETCH_ROUTE_DIRECTIONS, status: 'error', error });
+export const receiveRouteDirections = directions => ({ type: FETCH_ROUTE_DIRECTIONS, status: 'success', response: directions });
 
 // routeDirectionStops
-export const requestRouteDirectionStops = () => { return { type: FETCH_ROUTE_DIRECTION_STOPS }};
-export const receiveRouteDirectionStopsError = (error) => { return { type: FETCH_ROUTE_DIRECTION_STOPS, status: 'error', error: error }};
-export const receiveRouteDirectionStops = stops => { return { type: FETCH_ROUTE_DIRECTION_STOPS, status: 'success', response: stops }};
+export const requestRouteDirectionStops = () => ({ type: FETCH_ROUTE_DIRECTION_STOPS });
+export const receiveRouteDirectionStopsError = error => ({ type: FETCH_ROUTE_DIRECTION_STOPS, status: 'error', error });
+export const receiveRouteDirectionStops = stops => ({ type: FETCH_ROUTE_DIRECTION_STOPS, status: 'success', response: stops });
 
 // Thunks for async actions -- thunks return funcs
 export function fetchRoutes() {
   return (dispatch) => {
     dispatch(requestRoutes());
-    return (Routes.fetch() 
+    return (Routes.fetch()
       .then(
         response => dispatch(receiveRoutes(response)),
-        error => dispatch(receiveRoutesError(error))
+        error => dispatch(receiveRoutesError(error)),
       )
     );
   };
-};
+}
 export function fetchRouteDirections(route) {
   return (dispatch) => {
     dispatch(requestRouteDirections());
-    return (RouteDirections.fetch(route) 
+    return (RouteDirections.fetch(route)
       .then(
         response => dispatch(receiveRouteDirections(response)),
-        error => dispatch(receiveRouteDirectionsError(error))
+        error => dispatch(receiveRouteDirectionsError(error)),
       )
     );
   };
-};
+}
 export function fetchRouteDirectionStops(route, direction) {
   return (dispatch) => {
     dispatch(requestRouteDirectionStops());
-    return (RouteDirectionStops.fetch(route, direction) 
+    return (RouteDirectionStops.fetch(route, direction)
       .then(
         response => dispatch(receiveRouteDirectionStops(response)),
-        error => dispatch(receiveRouteDirectionStopsError(error))
+        error => dispatch(receiveRouteDirectionStopsError(error)),
       )
     );
   };
-};
+}
