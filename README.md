@@ -27,15 +27,18 @@ PS how is this done? Cherry picking??
 
 ### Getting started
 clone bella-muni-redux
-You should now have the relevant package.json files and a file structure like the following:
-    src/
-       /bella-muni-redux/
-       /clients/
-            mocha/
-                index.js
-    
-Create your own client directory and index.js file in clients/
-npm run build to run
 
-client directory name should match the fork name.
-All references to the redux lib should be as follows, eg '../../bella-muni-redux/actions'.
+You should now have the relevant package.json files and a file structure like the following:
+```
+src/
+   bella-muni-redux/
+   clients/
+        mocha/
+            index.js
+```
+    
+Create your own client directory and index.js file in `clients/`
+`npm run build` to run
+
+Client directory name should match the fork name.
+All references to the redux lib should be as follows, eg `import {...} from '../../bella-muni-redux/actions'`.
