@@ -12,7 +12,7 @@ To create a UI-independent state management application for BellaMuni using Redu
 - Data models should have environment based, customizable configs.
 - Clients having to use the '../../bella-muni-redux' path seems unecessary, need to figure out a better solution.
 
-## Client build instructions.
+## Client build instructions
 Any new clients should fork this main bella-muni-redux repo.
 
 Why? Because any client needs to have all of bella-muni-redux's dependencies installed.
@@ -26,7 +26,7 @@ Any other changes should go ONLY in the client branch.
 PS how is this done? Cherry picking??
 
 ### Getting started
-clone bella-muni-redux
+fork `bella-muni-redux`. Name the fork the name of your client. Should be a valid directory name.
 
 You should now have the relevant package.json files and a file structure like the following:
 ```
